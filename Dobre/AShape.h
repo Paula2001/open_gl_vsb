@@ -18,7 +18,7 @@ class AShape
 		const char* getPosition();
 		virtual void draw(GLFWwindow* window) = 0;
 		unsigned int getShader();
-
+		AShape* setShaderMartix(glm::mat4 m);
 	private:
 		const char* color;
 		unsigned int shader;

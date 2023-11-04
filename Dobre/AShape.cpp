@@ -53,9 +53,10 @@ AShape* AShape::setColor(char color) {
 AShape* AShape::setPostion() {
     this->position =
         "#version 330\n"
+        "uniform mat4 modelMatrix;"
         "layout(location=0) in vec3 vp;"
         "void main () {"
-        "     gl_Position = vec4 (vp, 1.0);"
+        " gl_Position = modelMatrix * vec4 (vp, 1.0);"
         "}";
     return this;
 }
@@ -102,4 +103,12 @@ const char* AShape::getPosition() {
 
 const char* AShape::getColor() {
     return this->position;
+}
+
+AShape* AShape::setShaderMartix(glm::mat4 m) {
+    GLint modelMatrixID = glGetUniformLocation(this->shader, "modelMatrix");
+    //Render
+    glUseProgram(this->shader);
+    glUniformMatrix4fv(modelMatrixID, 1, GL_FALSE, glm::value_ptr(m));
+    return this;
 }

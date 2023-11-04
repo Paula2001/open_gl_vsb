@@ -24,6 +24,7 @@
     <ProjectGuid>{353a728f-f562-4e48-b1b5-06880b48f7f0}</ProjectGuid>
     <RootNamespace>Dobre</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>OPENGL</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
